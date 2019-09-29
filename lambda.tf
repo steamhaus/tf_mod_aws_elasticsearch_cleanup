@@ -1,6 +1,6 @@
 data "archive_file" "es_cleanup_lambda" {
   type        = "zip"
-  source_file = "${path.module}/files/es-cleanup.py"
+  source_file = "${path.module}/files/*"
   output_path = "${path.module}/es-cleanup.zip"
 }
 
