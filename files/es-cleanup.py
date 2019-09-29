@@ -127,6 +127,24 @@ class ES_Cleanup(object):
                 else:
                     raise  # Stop retrying, re-raise exception
 
+    def send_error(self, msg):
+        """Send SNS error
+
+        Args:
+            msg (str): error string
+
+        Returns:
+            None
+        """
+        _msg = "[%s][%s] %s" % (self.name, self.cur_account, msg)
+        print(_msg)
+        if self.cfg["sns_alert"] != "":
+            sns_region = self.cfg["sns_alert"].split(":")[4]
+            sns = boto3.client("sns", region_name=sns_region)
+            response = sns.publish(
+                TopicArn=self.cfg["sns_alert"], Message=_msg)
+
+
     def delete_index(self, index_name):
         """ES DELETE specific index
         Args:
