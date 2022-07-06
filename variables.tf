@@ -1,4 +1,4 @@
-variable "prefix" {  default = "" }
+variable "prefix" { default = "" }
 
 variable "schedule" { default = "cron(0 3 * * ? *)" }
 
