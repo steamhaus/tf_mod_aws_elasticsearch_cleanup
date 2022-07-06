@@ -42,7 +42,7 @@ Usage
 
 ```
 module "es_cleanup" {
-  source = "git::https://git.steamhaus.co.uk/steamhaus/tf_mod_aws_elasticsearch_cleanup"
+  source = "git::https://github.com/steamhaus/tf_mod_aws_elasticsearch_cleanup"
 
   prefix       = "test-eu-west-1-"
   es_endpoint  = "test-es-XXXXXXX.eu-west-1.es.amazonaws.com"
