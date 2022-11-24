@@ -15,11 +15,11 @@ resource "aws_lambda_function" "es_cleanup" {
 
   environment {
     variables = {
-      es_endpoint  = "${var.es_endpoint}"
-      index        = "${var.index}"
-      delete_after = "${var.delete_after}"
-      index_format = "${var.index_format}"
-      sns_alert    = "${var.sns_alert}"
+      es_endpoint  = var.es_endpoint
+      index        = var.index
+      delete_after = var.delete_after
+      index_format = var.index_format
+      sns_alert    = var.sns_alert
     }
   }
 }
